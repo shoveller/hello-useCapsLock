@@ -1,36 +1,21 @@
 import './App.css'
+import { Password } from "components/Password"
 
 import { DynamicRoutes } from 'DynamicRoutes'
 import React from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 const Loading = () => <div>Loading...</div>
 
-function App() {
+function App () {
   return (
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-          <ul>
-            <li>
-              <Link to="/">To Main Page</Link>
-            </li>
-            <li>
-              <Link to="/sub">To Sub Page</Link>
-            </li>
-          </ul>
-          <DynamicRoutes Loading={<Loading />} />
-          <p>
-            Add some pages under<code>src/pages</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <DynamicRoutes Loading={<Loading/>}/>
+          <p>이 예제는 전역에서 capslock 키를 감지하는 코드를 담고 있습니다.</p>
+          <p>osx의 password input을 흉내냅니다.</p>
+          <Password/>
         </BrowserRouter>
       </header>
     </div>
